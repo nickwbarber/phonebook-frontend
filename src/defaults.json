@@ -1,0 +1,7 @@
+{
+    "name": "enter name here...",
+    "phonenumber": "555-555-5555",
+    "persons": [],
+    "query": "",
+    "serverUrl": "http://localhost:3001/api/persons"
+}
