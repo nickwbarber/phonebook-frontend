@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import defaults from './defaults.json'
 
 // helper functions
-import NewState from './util'
+import NewState   from './util'
 import { getAll } from './services/phonebook'
 
 // components
@@ -41,7 +41,7 @@ const App = () => {
         <EntryForm
           nameState={nameState}
           phonenumberState={phonenumberState}
-          personsState={personsState}
+          personsState={personsState}  // uses setter
           messageState={errorMessageState}
         >
         </EntryForm>
