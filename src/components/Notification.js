@@ -1,4 +1,4 @@
-export default Notification = ({ messageState }) => {
+const Notification = ({ messageState }) => {
   const notificationStyle = {
     "color": "salmon",
     "background": "slategray",
@@ -21,3 +21,5 @@ export default Notification = ({ messageState }) => {
   return <></>
   
 }
+
+export default Notification
