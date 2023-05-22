@@ -26,7 +26,7 @@ const App = () => {
   useEffect(() => {
     getAll()
     .then(returnedPersons => {
-      personsState.setter(returnedPersons)
+      personsState.setter(() => returnedPersons)
     })
   }, [])
 
