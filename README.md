@@ -1,3 +1,7 @@
+# Phonebook web application
+
+This is a web application which mocks a phonebook. It is intended to satisfy the requirements of the Fullstack Open course by the University of Helsinki.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
