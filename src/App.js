@@ -1,5 +1,5 @@
 // external libraries
-import { useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 
 // defaults
 import defaults from './defaults.json'
@@ -22,13 +22,15 @@ const App = () => {
   const queryState        = NewState(defaults.query)
   const errorMessageState = NewState("")
   
-  // fetch persons from database
+  const fetchData = useCallback(async () => {
+    const personsData = await getAll()
+    personsState.setter(personsData)
+  }, [personsState])
+    
+  // fetch persons from database only on first render
   useEffect(() => {
-    getAll()
-    .then(returnedPersons => {
-      personsState.setter(() => returnedPersons)
-    })
-  }, [])
+    fetchData()
+  }, [fetchData])
 
   return (
     <div>
