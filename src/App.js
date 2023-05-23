@@ -25,7 +25,7 @@ const App = () => {
   const fetchData = useCallback(async () => {
     const personsData = await getAll()
     personsState.setter(personsData)
-  }, [personsState])
+  }, [])
     
   // fetch persons from database only on first render
   useEffect(() => {
