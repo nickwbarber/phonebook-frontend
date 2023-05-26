@@ -67,10 +67,17 @@ export const handleSubmit = (nameState, phonenumberState, personsState, messageS
       )
     })
     .catch(error => {
-      error.response.status === 404
-        ? messageState.setter('Already deleted!')
-        : messageState.setter('There was an error!')
-      console.log(`Couldn't update person ${matchingPerson.id}: ${error.response.status}`)
+      switch (error.response.status) {
+        case 404:
+          messageState.setter('Already deleted!')
+          break
+        case 400:
+          messageState.setter(error.response.data.error)
+          break
+        default:
+          messageState.setter('Something went wrong!')
+      }
+      console.log(error.response.data.error)
     })
     return
   }
