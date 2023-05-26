@@ -87,4 +87,8 @@ export const handleSubmit = (nameState, phonenumberState, personsState, messageS
     phonenumberState.setter('')
     personsState.setter(personsState.value.concat(returnedListing))
   })
+  .catch(err => {
+    console.log(err.response.data.error)
+    messageState.setter(err.response.data.error)
+  })
 }
